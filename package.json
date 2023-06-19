@@ -1,0 +1,37 @@
+{
+  "name": "promises-solved",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test-all": "vitest --run",
+    "test-1": "vitest --run e1.",
+    "test-2": "vitest --run e2.",
+    "test-3": "vitest --run e3.",
+    "test-4": "vitest --run e4.",
+    "test-5": "vitest --run e5.",
+    "test-6": "vitest --run e6.",
+    "test-7": "vitest --run e7.",
+    "test-8": "vitest --run e8.",
+    "test-9": "vitest --run e9.",
+    "test-10": "vitest --run e10.",
+    "test-11": "vitest --run e11.",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.3",
+    "node-fetch": "^3.3.1",
+    "vitest": "^0.29.7"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.8"
+  }
+}

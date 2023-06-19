@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "user1@test.com",
+      "isActive": false
+    },
+    {
+      "id": 2,
+      "login": "user2@test.com",
+      "isActive": false
+    },
+    {
+      "id": 3,
+      "login": "user3@test.com",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "login": "user4@test.com",
+      "isActive": false
+    }
+  ],
+  "planets": [
+    {
+      "id": 1,
+      "name": "Earth",
+      "hasMoons": true
+    },
+    {
+      "id": 2,
+      "name": "Mercury",
+      "hasMoons": false
+    },
+    {
+      "id": 2,
+      "name": "Saturne",
+      "hasMoons": true
+    }
+  ]
+}
