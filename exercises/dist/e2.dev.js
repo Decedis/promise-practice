@@ -1,3 +1,10 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handlePromise = exports.getPromise = void 0;
+
 /**
  * PROMISE CONSTRUCTOR (Reject with onRejected callback argument)
  * Please, make sure to read the "01 Promise-constructor.md" file in exercise-info folder before you start!
@@ -14,22 +21,18 @@
  * The getPromise function must be exported
  * Example: export const getPromise = (bool) = return <Your promise constructor code>
  */
-
-export const getPromise = (bool) => {
+var getPromise = function getPromise(bool) {
   // Your code goes here...
-  return new Promise((resolve, reject) => {
+  return new Promise(function (resolve, reject) {
     if (bool == true) {
       resolve('The PROMISE was RESOLVED');
     }
+
     if (bool == false) {
       reject("The PROMISE was REJECTED");
     }
-    });
-}
-  
- 
-
-
+  });
+};
 /**
  * Create a handlePromise function that follows:
  * * Takes a promise as an argument. The promise will either resolve or reject
@@ -40,28 +43,30 @@ export const getPromise = (bool) => {
  */
 
 
+exports.getPromise = getPromise;
 
-export const handlePromise = (promised) => {
+var handlePromise = function handlePromise(promised) {
   // Your code goes here...
-  let onFulfilled = ((data) => data);
-  let onRejected = ((err) => {
+  var onFulfilled = function onFulfilled(data) {
+    return data;
+  };
+
+  var onRejected = function onRejected(err) {
     err = "Uh Oh";
-    return err
-  });
-  
-  // return new Promise((resolve) => {
+    return err;
+  }; // return new Promise((resolve) => {
   //   resolve(promised
   //     .then(onFulfilled)
   //     .catch(onRejected)
   //   );
   // });
-  return promised
-    .then(onFulfilled)
-    .catch(onRejected)
-};
 
 
-// === TEST YOURSELF ===
+  return promised.then(onFulfilled)["catch"](onRejected);
+}; // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-2"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
+
+
+exports.handlePromise = handlePromise;
