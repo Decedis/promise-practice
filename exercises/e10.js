@@ -5,6 +5,7 @@
  * for the next task. The result4 is already using .race(), so you can't use it for result1, result2 or result3
  */
 
+
 const promise1 = new Promise((res) => setTimeout(res, 4000, "RESOLVED AGAIN"));
 const promise2 = Promise.reject("Promise 2 REJECTED");
 const promise3 = Promise.resolve("Promise 3 RESOLVED");
@@ -24,7 +25,7 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
  */
 
 // Your code goes here...
-export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
+export const handlePromise1 = Promise.all(promiseArr).catch((e) => e);
 
 /**
  * @task
@@ -41,6 +42,7 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
+export const handlePromise2 = () => Promise.any(promiseArr).then((res) => res).catch((reason) => reason)
 
 /**
  * @task
@@ -57,6 +59,8 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
+export const handlePromise3 = () => Promise.allSettled((promiseArr)).then((res) => res).catch((reason) => reason);
+
 
 /**
  * @task
@@ -66,7 +70,22 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  * The value of newPromiseArr MUST have more than one promise in the array!
  */
 
-export const newPromiseArr = promiseArr.filter(/* <Your code goes here>*/);
+// export const newPromiseArr = promiseArr.filter((promise) => {
+//   return promise
+//       .then((res) => res === 'RESOLVED AGAIN') ? promise : 0
+// });
+//export const newPromiseArr = promiseArr.filter((promise) => promise.then((res) => console.log(res) === 'RESOLVED AGAIN') ? promise : 0);
+export const newPromiseArr = promiseArr.filter((promise) => {
+  return promise
+      .then((res) => {
+        if(res === 'RESOLVED AGAIN'){
+          return res;
+        } else {
+          return res;
+        }
+      })
+      .catch(reason => reason)
+});
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
 export const handlePromise4 = (arr) => {
@@ -79,3 +98,5 @@ export const handlePromise4 = (arr) => {
 // Once you're finished run the test with "npm run test-10"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
+
+
