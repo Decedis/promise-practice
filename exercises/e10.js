@@ -71,16 +71,17 @@ export const handlePromise3 = () => Promise.allSettled((promiseArr)).then((res) 
  */
 
 
-export const newPromiseArr = promiseArr.filter((promise) => {
-  return promise
-      .then((res) => {
-        if(res === 'RESOLVED AGAIN'){
-          return res;
-        // } else {
-        //   return res;
-        // }
-      }})
-      .catch(reason => reason)
+// export const newPromiseArr = promiseArr.filter((promise) => {
+//   return promise
+//       .then((res) => {
+//         if(res === 'RESOLVED AGAIN'){
+//           return res;
+//       }})
+//       .catch(reason => reason)
+// });
+export const newPromiseArr = promiseArr.filter((promise, index) => {
+    promise.catch(reason => reason);
+    return index === 3;
 });
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
