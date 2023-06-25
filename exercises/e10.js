@@ -70,20 +70,16 @@ export const handlePromise3 = () => Promise.allSettled((promiseArr)).then((res) 
  * The value of newPromiseArr MUST have more than one promise in the array!
  */
 
-// export const newPromiseArr = promiseArr.filter((promise) => {
-//   return promise
-//       .then((res) => res === 'RESOLVED AGAIN') ? promise : 0
-// });
-//export const newPromiseArr = promiseArr.filter((promise) => promise.then((res) => console.log(res) === 'RESOLVED AGAIN') ? promise : 0);
+
 export const newPromiseArr = promiseArr.filter((promise) => {
   return promise
       .then((res) => {
         if(res === 'RESOLVED AGAIN'){
           return res;
-        } else {
-          return res;
-        }
-      })
+        // } else {
+        //   return res;
+        // }
+      }})
       .catch(reason => reason)
 });
 
